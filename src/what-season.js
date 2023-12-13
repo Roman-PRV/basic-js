@@ -12,8 +12,9 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function getSeason(date) {
-  if (arguments.length == 0)
-    throw Error("Unable to determine the time of year!");
+  if (arguments.length == 0) {
+    return "Unable to determine the time of year!";
+  }
 
   let verifiedDate;
   try {
@@ -22,16 +23,7 @@ function getSeason(date) {
     throw Error("Invalid date!");
   }
 
-  if (isNaN(new Date(verifiedDate)))
-    throw Error("Unable to determine the time of year!");
-  let month;
-  // console.log(month);
-
-  try {
-    month = verifiedDate.getMonth();
-  } catch (error) {
-    throw Error("Unable to determine the time of year!");
-  }
+  let month = verifiedDate.getMonth();
 
   switch (month) {
     case 11:
