@@ -24,7 +24,6 @@ const { NotImplementedError } = require("../extensions/index.js");
  */
 function getDNSStats(domains) {
   map = new Map();
-
   let domainsArr = domains.map((elem) => elem.split(".").reverse());
   domainsArr.forEach((element) => {
     for (let i = 1; i <= element.length; i++) {
